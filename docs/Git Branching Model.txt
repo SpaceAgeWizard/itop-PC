@@ -1,0 +1,19 @@
+The development of the MotionControl package is organized in git with the branchs as follows:
+
+- master (<-development; ->hotfix; infinite-life)
+- hotfix (<-master; ->development; finite-life)
+- development (<-master [once]; ->master, ->feature/xxx; infinite-life)
+- feature/XXX (<-development; ->development; finite-life)
+
+The branch "master" contains the stable, live production code. After the initial commit, the
+"development" line is branched from it to form the main working branch. After the initial branch,
+it is only branched to fix bugs. Bug fixing branches of master are immediately merged back into
+master as well as the active development branch.
+
+The working development branch can be branched an unlimited number of times into finite-lifetime
+feature branches where complex new features can added before being merged back into development. Feature
+branches are named "feature/some-unique-name". Not all new features need be made on their own
+branches.
+
+When the development branch has progressed enough to be put into production, the development
+branch is merged back into master with a versioning tag.
